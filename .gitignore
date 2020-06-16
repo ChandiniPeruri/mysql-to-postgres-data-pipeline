@@ -1,3 +1,4 @@
 .idea
 __pycache__
-venv-retail
+venv-retai
+.DS_STORE
