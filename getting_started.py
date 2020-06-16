@@ -2,6 +2,8 @@
 import sys
 from config import DB_DETAILS
 from utils import get_tables
+from mysql import connector as mc
+from mysql.connector import errorcode as ed
 
 
 def main():
