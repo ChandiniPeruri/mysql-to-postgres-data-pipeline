@@ -1,9 +1,8 @@
 """this is the driver program"""
 import sys
 from config import DB_DETAILS
-from utils import get_tables
-from mysql import connector as mc
-from mysql.connector import errorcode as ed
+from util import get_tables
+from read import read_table
 
 
 def main():
@@ -13,8 +12,12 @@ def main():
     db_details = DB_DETAILS[env]
     tables = get_tables('table_list.txt')
     for table in tables['table_name']:
-        print(table)
-
+        print(f'Reading data for table {table}')
+        data, column_names = read_table(db_details, table)
+        print(data)
+        print(column_names)
+        print(f'Loading data for table {table}')
+        
 
 if __name__ == '__main__':
     main()
